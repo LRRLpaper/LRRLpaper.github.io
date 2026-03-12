@@ -55,18 +55,18 @@ body {
   border-bottom: 1px solid var(--gray-200);
 }
 
-.venue-badge {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.site-logo {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--navy);
-  background: rgba(60, 84, 136, 0.08);
-  border: 1px solid rgba(60, 84, 136, 0.18);
-  padding: 4px 14px;
-  border-radius: 20px;
-  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+
+.hero {
+  position: relative;
 }
 
 .title {
