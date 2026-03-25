@@ -735,4 +735,43 @@ body {
     color: #5f8fd6;              /* slightly darker on hover */
     border-bottom: 1px solid rgba(95, 143, 214, 0.9);
   }
+
+  .bibtex-block {
+    position: relative;
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1.25rem;
+  }
+
+.bibtex-block pre {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #24292e;
+  }
+
+.bibtex-copy-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #586069;
+    background: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+.bibtex-copy-btn:hover {
+    background: #f3f4f6;
+    color: #24292e;
+  }
 }
