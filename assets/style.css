@@ -723,13 +723,16 @@ body {
     padding: 0 16px;
   }
   /* Make author names clearly clickable */
+/* Pastel-style author links */
 .authors .author a {
-    color: #1a73e8;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    color: #7aa7e6;              /* soft pastel blue */
+    text-decoration: none;
+    border-bottom: 1px solid rgba(122, 167, 230, 0.5);
+    transition: all 0.2s ease;
   }
   
   .authors .author a:hover {
-    color: #0b57d0;
+    color: #5f8fd6;              /* slightly darker on hover */
+    border-bottom: 1px solid rgba(95, 143, 214, 0.9);
   }
 }
