@@ -722,4 +722,14 @@ body {
   .container {
     padding: 0 16px;
   }
+  /* Make author names clearly clickable */
+.authors .author a {
+    color: #1a73e8;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  .authors .author a:hover {
+    color: #0b57d0;
+  }
 }
