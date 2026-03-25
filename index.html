@@ -311,6 +311,30 @@
   </div>
 </section>
 
+<!-- ==================== BIBTEX ==================== -->
+<section class="section" id="citation">
+  <div class="container">
+    <h2>Citation</h2>
+    <p class="section-subtitle">If you find this work useful, please cite our paper:</p>
+    <div class="bibtex-block">
+      <button class="bibtex-copy-btn" onclick="(function(btn){
+        const code = btn.closest('.bibtex-block').querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(function(){
+          btn.textContent = 'Copied!';
+          setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+        });
+      })(this)">Copy</button>
+      <pre><code>@article{demirel2026llms,
+  title={LLMs can construct powerful representations and streamline
+         sample-efficient supervised learning},
+  author={Demirel, Ilker and Shi, Lawrence and Hussain, Zeshan and Sontag, David},
+  journal={arXiv preprint arXiv:2603.11679},
+  year={2026}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
   <div class="container">
