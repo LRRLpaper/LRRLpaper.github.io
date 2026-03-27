@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LLMs can construct powerful representations and streamline sample-efficient supervised learning</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -15,7 +12,7 @@
 <header class="hero">
   <div class="container">
     <div class="site-logo">LLM Rubric Representation Learning (LRRL)</div>
-    <h1 class="title">LLMs can construct powerful representations and streamline<br>sample-efficient supervised learning</h1>
+    <h1 class="title">LLMs can construct powerful representations<br>and streamline sample-efficient supervised learning</h1>
 
     <div class="authors">
       <span class="author">
@@ -38,42 +35,35 @@
     </div>
 
     <div class="action-buttons">
-      <a href="assets/LLM-rubric-representation-learning.pdf" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <a href="assets/LLM-rubric-representation-learning.pdf" class="btn btn-paper">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         Paper
       </a>
-      <a href="https://arxiv.org/abs/2603.11679" class="btn btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <a href="https://arxiv.org/abs/2603.11679" class="btn btn-arxiv">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         arXiv
       </a>
-      <a href="https://github.com/demireal/LRRL" target="_blank" class="btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <a href="https://github.com/demireal/LRRL" target="_blank" class="btn btn-code">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         Code
       </a>
     </div>
   </div>
 </header>
 
-<!-- ==================== KEY RESULTS FIGURE ==================== -->
-<section class="section section-alt" id="results-overview">
+<!-- ==================== METHOD ==================== -->
+<section class="section" id="method">
   <div class="container">
+    <p class="lead-statement">
+      Our agentic pipeline uses LLMs to construct <em>rubrics</em> &mdash; structured specifications for automatically transforming raw, heterogeneous inputs into powerful representations for efficient downstream supervised learning.
+    </p>
+
     <figure class="figure-full">
       <img src="assets/images/fig_overall_1x2_core.png" alt="Average performance over 15 EHRSHOT tasks comparing rubric methods against baselines">
       <figcaption>
         <strong>Figure 1.</strong> Performance averaged over all 15 clinical prediction tasks. Rubric representations outperform naive text serialization (NaiveText), a clinical foundation model pretrained on 2.57M patients (CLMBR-T), and a count-feature gradient boosting machine (Count-GBM).
       </figcaption>
     </figure>
-
-  </div>
-</section>
-
-<!-- ==================== METHOD ==================== -->
-<section class="section" id="method">
-  <div class="container">
-    <h2>Method</h2>
-    <p class="section-subtitle">
-      Our agentic pipeline uses LLMs to construct <em>rubrics</em> &mdash; structured specifications that transform raw, heterogeneous data into powerful representations for downstream supervised learning.
-    </p>
 
     <!-- Pipeline Steps -->
     <h3 class="subsection-title">Global Rubric Pipeline</h3>
