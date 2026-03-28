@@ -126,6 +126,35 @@
       </div>
     </div>
 
+    <!-- Rubric Synthesis Prompt -->
+    <h3 class="subsection-title">Full prompt for rubric synthesis (Panel B)</h3>
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-badge">Panel B</span>
+        Rubric Synthesis Prompt
+      </div>
+      <div class="prompt-body">
+        <p>You are a medical expert designing a structured rubric for a clinical prediction task.</p>
+        <p class="prompt-section">## Task</p>
+        <p>- Name: <span class="prompt-var">{task_name}</span><br>- Query: <span class="prompt-var">{task_query}</span></p>
+        <p class="prompt-section">## Context</p>
+        <p>You will be given <span class="prompt-var">{40}</span> labeled patient EHR examples (<span class="prompt-var">{20}</span> positive, <span class="prompt-var">{20}</span> negative). Another model will later use your rubric to transform new patient EHRs into structured summaries, which will then serve as input to a supervised classifier.</p>
+        <p class="prompt-section">## What You Must Do</p>
+        <p>Study the examples below. Combine what you observe in them with your medical knowledge to design a rubric template &mdash; a set of named fields that, when filled in for any patient, produce a structured summary optimized for this prediction task.</p>
+        <p>The rubric should:</p>
+        <ol>
+          <li><strong>Be data-driven and discriminative.</strong> Identify which features, patterns, and interactions actually separate the positive and negative cases.</li>
+          <li><strong>Be structured and consistent.</strong> Every rubricified output must follow the same field names and order.</li>
+          <li><strong>Extract facts only.</strong> The evaluator filling in the rubric must NOT make predictions, assign risk levels, or draw conclusions.</li>
+          <li><strong>Be concise.</strong> Focus on extracting information relevant to the task, not reproducing the entire EHR.</li>
+        </ol>
+        <p class="prompt-section">## Examples</p>
+        <p><span class="prompt-var">{Positive and negative EHR serializations}</span></p>
+        <p class="prompt-section">## Output</p>
+        <p>Output ONLY the rubric template itself &mdash; the instructions another model will follow to transform a patient EHR. No preamble, no explanation. The template must be self-contained and directly usable.</p>
+      </div>
+    </div>
+
     <!-- Rubric Types -->
     <h3 class="subsection-title">Two Types of Rubrics</h3>
 
@@ -160,35 +189,32 @@
         <div class="repr-body">
           <p class="repr-section"><strong>## Patient Demographics</strong></p>
           <p>- Patient age: 78, FEMALE [...]</p>
-          <p class="repr-section"><strong>## Detailed Past Medical Visits</strong></p>
           <p class="repr-section"><strong>### Inpatient Visit</strong> (14 days to pred. time)</p>
-          <p><strong>Conditions:</strong> Acute posthemorrhagic anemia, pH: 7.25, 7.31 [...]</p>
-          <p><strong>Medications:</strong> furosemide 20 MG, pantoprazole 20 MG [...]</p>
-          <p><strong>Procedures:</strong> Chest x-ray, Electrocardiogram [...]</p>
+          <p><strong>Conditions:</strong> Acute posthemorrhagic anemia [...]</p>
+          <p><strong>Medications:</strong> furosemide 20 MG [...]</p>
           <p class="repr-section"><strong>### ER Visit</strong> (87 days before)</p>
-          <p><strong>Conditions:</strong> Benign essential hypertension, Chest pain [...]</p>
+          <p><strong>Conditions:</strong> Benign essential hypertension [...]</p>
           <p><strong>Medications:</strong> ondansetron, nitroglycerin [...]</p>
         </div>
       </div>
 
       <div class="repr-card repr-local">
-        <div class="repr-header">Local Rubric</div>
+        <div class="repr-header">Local Rubric Text Serialization</div>
         <div class="repr-body">
           <p class="repr-section"><strong>1. Patient Snapshot</strong></p>
-          <p>27 yo hispanic male. Recurrent cardiology visits for congenital anomaly of coronary artery [...]</p>
+          <p>27 yo hispanic male. Recurrent cardiology visits [...]</p>
           <p class="repr-section"><strong>2. Main Risk Factors</strong></p>
-          <p>- Congenital coronary artery anomaly (structural predisposition to ischemia)</p>
+          <p>- Congenital coronary artery anomaly [...]</p>
           <p>- Tobacco exposure (smokeless) [...]</p>
           <p class="repr-section"><strong>3. Protective Factors</strong></p>
-          <p>- Young age (27), Normal BMI (21-22)</p>
-          <p>- No diabetes or renal impairment [...]</p>
+          <p>- Young age (27), Normal BMI (21-22) [...]</p>
           <p class="repr-section"><strong>6. Overall Risk Impression</strong></p>
-          <p>Elevated risk of acute MI despite favorable metabolic parameters [...]</p>
+          <p>Elevated risk of acute MI [...]</p>
         </div>
       </div>
 
       <div class="repr-card repr-global">
-        <div class="repr-header">Global Rubric</div>
+        <div class="repr-header">Global Rubric Text Serialization</div>
         <div class="repr-body">
           <p class="repr-section"><strong>&sect;3. Demographics</strong></p>
           <p>55 | FEMALE | [...]</p>
